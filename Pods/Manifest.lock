@@ -1,0 +1,26 @@
+PODS:
+  - Aspects (1.4.1)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - ObjectMapper (3.5.1)
+
+DEPENDENCIES:
+  - Aspects
+  - FMDB
+  - ObjectMapper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Aspects
+    - FMDB
+    - ObjectMapper
+
+SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+
+PODFILE CHECKSUM: 79672cf1c33cc37d74d77268eafd7ed6e99ca515
+
+COCOAPODS: 1.7.5

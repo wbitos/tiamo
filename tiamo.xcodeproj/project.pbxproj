@@ -1,0 +1,646 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19F12C2CA9A5C6CAADE22546 /* Pods_tiamo_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06CD89C6E2A09896AFF5D6EE /* Pods_tiamo_demo.framework */; };
+		55064B67F43C8D26E12ADB35 /* Pods_tiamo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88AC605EF5B263EAC9A56FF0 /* Pods_tiamo.framework */; };
+		5BC92B0C23222AAA002E1396 /* tiamo.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BC92B0A23222AAA002E1396 /* tiamo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BC92B1923222B4B002E1396 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B1823222B4B002E1396 /* AppDelegate.swift */; };
+		5BC92B1B23222B4B002E1396 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B1A23222B4B002E1396 /* ViewController.swift */; };
+		5BC92B1E23222B4B002E1396 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC92B1C23222B4B002E1396 /* Main.storyboard */; };
+		5BC92B2023222B4D002E1396 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BC92B1F23222B4D002E1396 /* Assets.xcassets */; };
+		5BC92B2323222B4D002E1396 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC92B2123222B4D002E1396 /* LaunchScreen.storyboard */; };
+		5BC92B2B232232C9002E1396 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B2A232232C9002E1396 /* Database.swift */; };
+		5BC92B2F23223487002E1396 /* DBQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B2E23223487002E1396 /* DBQuery.swift */; };
+		5BC92B332322374F002E1396 /* DBCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B322322374F002E1396 /* DBCondition.swift */; };
+		5BC92B3523223781002E1396 /* DBQueryable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B3423223781002E1396 /* DBQueryable.swift */; };
+		5BC92B3723223A6F002E1396 /* DBCombinationCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B3623223A6F002E1396 /* DBCombinationCondition.swift */; };
+		5BC92B3923223AFD002E1396 /* DBLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B3823223AFD002E1396 /* DBLimit.swift */; };
+		5BC92B3B23223B5C002E1396 /* DBOrderby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B3A23223B5C002E1396 /* DBOrderby.swift */; };
+		5BC92B3D2322403A002E1396 /* DBValueCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B3C2322403A002E1396 /* DBValueCondition.swift */; };
+		5BC92B3F2322571B002E1396 /* DBIntervalValueCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B3E2322571B002E1396 /* DBIntervalValueCondition.swift */; };
+		5BC92B41232257BE002E1396 /* DBMultValueCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B40232257BE002E1396 /* DBMultValueCondition.swift */; };
+		5BC92B432322738E002E1396 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B422322738E002E1396 /* Model.swift */; };
+		5BC92B452322748E002E1396 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B442322748E002E1396 /* Record.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06CD89C6E2A09896AFF5D6EE /* Pods_tiamo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tiamo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC92B0723222AAA002E1396 /* tiamo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = tiamo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC92B0A23222AAA002E1396 /* tiamo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiamo.h; sourceTree = "<group>"; };
+		5BC92B0B23222AAA002E1396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BC92B1623222B4B002E1396 /* tiamo-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tiamo-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC92B1823222B4B002E1396 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BC92B1A23222B4B002E1396 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BC92B1D23222B4B002E1396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BC92B1F23222B4D002E1396 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5BC92B2223222B4D002E1396 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BC92B2423222B4D002E1396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BC92B2A232232C9002E1396 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		5BC92B2E23223487002E1396 /* DBQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBQuery.swift; sourceTree = "<group>"; };
+		5BC92B322322374F002E1396 /* DBCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCondition.swift; sourceTree = "<group>"; };
+		5BC92B3423223781002E1396 /* DBQueryable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBQueryable.swift; sourceTree = "<group>"; };
+		5BC92B3623223A6F002E1396 /* DBCombinationCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBCombinationCondition.swift; sourceTree = "<group>"; };
+		5BC92B3823223AFD002E1396 /* DBLimit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBLimit.swift; sourceTree = "<group>"; };
+		5BC92B3A23223B5C002E1396 /* DBOrderby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBOrderby.swift; sourceTree = "<group>"; };
+		5BC92B3C2322403A002E1396 /* DBValueCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBValueCondition.swift; sourceTree = "<group>"; };
+		5BC92B3E2322571B002E1396 /* DBIntervalValueCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBIntervalValueCondition.swift; sourceTree = "<group>"; };
+		5BC92B40232257BE002E1396 /* DBMultValueCondition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBMultValueCondition.swift; sourceTree = "<group>"; };
+		5BC92B422322738E002E1396 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5BC92B442322748E002E1396 /* Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Record.swift; sourceTree = "<group>"; };
+		88AC605EF5B263EAC9A56FF0 /* Pods_tiamo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tiamo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB4882A57B7C5B3356A64995 /* Pods-tiamo-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiamo-demo.debug.xcconfig"; path = "Target Support Files/Pods-tiamo-demo/Pods-tiamo-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		B5A00B65E7E79457BDA68BF0 /* Pods-tiamo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiamo.release.xcconfig"; path = "Target Support Files/Pods-tiamo/Pods-tiamo.release.xcconfig"; sourceTree = "<group>"; };
+		BDA17DDE169CB1A20B247F8A /* Pods-tiamo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiamo.debug.xcconfig"; path = "Target Support Files/Pods-tiamo/Pods-tiamo.debug.xcconfig"; sourceTree = "<group>"; };
+		C6642714387E3DA140BA8B25 /* Pods-tiamo-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiamo-demo.release.xcconfig"; path = "Target Support Files/Pods-tiamo-demo/Pods-tiamo-demo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BC92B0423222AAA002E1396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55064B67F43C8D26E12ADB35 /* Pods_tiamo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC92B1323222B4B002E1396 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19F12C2CA9A5C6CAADE22546 /* Pods_tiamo_demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5BC92AFD23222AAA002E1396 = {
+			isa = PBXGroup;
+			children = (
+				5BC92B0923222AAA002E1396 /* tiamo */,
+				5BC92B1723222B4B002E1396 /* tiamo-demo */,
+				5BC92B0823222AAA002E1396 /* Products */,
+				60D7A1D7322640167307FFD5 /* Pods */,
+				F7C26BE88DBAD8C713E1FB16 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BC92B0823222AAA002E1396 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BC92B0723222AAA002E1396 /* tiamo.framework */,
+				5BC92B1623222B4B002E1396 /* tiamo-demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BC92B0923222AAA002E1396 /* tiamo */ = {
+			isa = PBXGroup;
+			children = (
+				5BC92B29232232A1002E1396 /* Database */,
+				5BC92B28232232A1002E1396 /* Model */,
+				5BC92B0A23222AAA002E1396 /* tiamo.h */,
+				5BC92B0B23222AAA002E1396 /* Info.plist */,
+			);
+			path = tiamo;
+			sourceTree = "<group>";
+		};
+		5BC92B1723222B4B002E1396 /* tiamo-demo */ = {
+			isa = PBXGroup;
+			children = (
+				5BC92B1823222B4B002E1396 /* AppDelegate.swift */,
+				5BC92B1A23222B4B002E1396 /* ViewController.swift */,
+				5BC92B1C23222B4B002E1396 /* Main.storyboard */,
+				5BC92B1F23222B4D002E1396 /* Assets.xcassets */,
+				5BC92B2123222B4D002E1396 /* LaunchScreen.storyboard */,
+				5BC92B2423222B4D002E1396 /* Info.plist */,
+			);
+			path = "tiamo-demo";
+			sourceTree = "<group>";
+		};
+		5BC92B28232232A1002E1396 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BC92B422322738E002E1396 /* Model.swift */,
+				5BC92B442322748E002E1396 /* Record.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BC92B29232232A1002E1396 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				5BC92B2A232232C9002E1396 /* Database.swift */,
+				5BC92B3423223781002E1396 /* DBQueryable.swift */,
+				5BC92B322322374F002E1396 /* DBCondition.swift */,
+				5BC92B3C2322403A002E1396 /* DBValueCondition.swift */,
+				5BC92B3E2322571B002E1396 /* DBIntervalValueCondition.swift */,
+				5BC92B40232257BE002E1396 /* DBMultValueCondition.swift */,
+				5BC92B3623223A6F002E1396 /* DBCombinationCondition.swift */,
+				5BC92B3823223AFD002E1396 /* DBLimit.swift */,
+				5BC92B3A23223B5C002E1396 /* DBOrderby.swift */,
+				5BC92B2E23223487002E1396 /* DBQuery.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		60D7A1D7322640167307FFD5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDA17DDE169CB1A20B247F8A /* Pods-tiamo.debug.xcconfig */,
+				B5A00B65E7E79457BDA68BF0 /* Pods-tiamo.release.xcconfig */,
+				AB4882A57B7C5B3356A64995 /* Pods-tiamo-demo.debug.xcconfig */,
+				C6642714387E3DA140BA8B25 /* Pods-tiamo-demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F7C26BE88DBAD8C713E1FB16 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88AC605EF5B263EAC9A56FF0 /* Pods_tiamo.framework */,
+				06CD89C6E2A09896AFF5D6EE /* Pods_tiamo_demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		5BC92B0223222AAA002E1396 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC92B0C23222AAA002E1396 /* tiamo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5BC92B0623222AAA002E1396 /* tiamo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC92B0F23222AAA002E1396 /* Build configuration list for PBXNativeTarget "tiamo" */;
+			buildPhases = (
+				7D30A2078569ADA2E2228F59 /* [CP] Check Pods Manifest.lock */,
+				5BC92B0223222AAA002E1396 /* Headers */,
+				5BC92B0323222AAA002E1396 /* Sources */,
+				5BC92B0423222AAA002E1396 /* Frameworks */,
+				5BC92B0523222AAA002E1396 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = tiamo;
+			productName = tiamo;
+			productReference = 5BC92B0723222AAA002E1396 /* tiamo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5BC92B1523222B4B002E1396 /* tiamo-demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BC92B2723222B4D002E1396 /* Build configuration list for PBXNativeTarget "tiamo-demo" */;
+			buildPhases = (
+				BF96740300EEA0BCFFFD9E5B /* [CP] Check Pods Manifest.lock */,
+				5BC92B1223222B4B002E1396 /* Sources */,
+				5BC92B1323222B4B002E1396 /* Frameworks */,
+				5BC92B1423222B4B002E1396 /* Resources */,
+				BB4FDD179101025A6A19A100 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tiamo-demo";
+			productName = "tiamo-demo";
+			productReference = 5BC92B1623222B4B002E1396 /* tiamo-demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BC92AFE23222AAA002E1396 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = wbitos;
+				TargetAttributes = {
+					5BC92B0623222AAA002E1396 = {
+						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
+					};
+					5BC92B1523222B4B002E1396 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = 5BC92B0123222AAA002E1396 /* Build configuration list for PBXProject "tiamo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BC92AFD23222AAA002E1396;
+			productRefGroup = 5BC92B0823222AAA002E1396 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BC92B0623222AAA002E1396 /* tiamo */,
+				5BC92B1523222B4B002E1396 /* tiamo-demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BC92B0523222AAA002E1396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC92B1423222B4B002E1396 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC92B2323222B4D002E1396 /* LaunchScreen.storyboard in Resources */,
+				5BC92B2023222B4D002E1396 /* Assets.xcassets in Resources */,
+				5BC92B1E23222B4B002E1396 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D30A2078569ADA2E2228F59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tiamo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB4FDD179101025A6A19A100 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tiamo-demo/Pods-tiamo-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-tiamo-demo/Pods-tiamo-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tiamo-demo/Pods-tiamo-demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF96740300EEA0BCFFFD9E5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-tiamo-demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BC92B0323222AAA002E1396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC92B3723223A6F002E1396 /* DBCombinationCondition.swift in Sources */,
+				5BC92B3523223781002E1396 /* DBQueryable.swift in Sources */,
+				5BC92B452322748E002E1396 /* Record.swift in Sources */,
+				5BC92B2F23223487002E1396 /* DBQuery.swift in Sources */,
+				5BC92B3D2322403A002E1396 /* DBValueCondition.swift in Sources */,
+				5BC92B3F2322571B002E1396 /* DBIntervalValueCondition.swift in Sources */,
+				5BC92B332322374F002E1396 /* DBCondition.swift in Sources */,
+				5BC92B2B232232C9002E1396 /* Database.swift in Sources */,
+				5BC92B41232257BE002E1396 /* DBMultValueCondition.swift in Sources */,
+				5BC92B432322738E002E1396 /* Model.swift in Sources */,
+				5BC92B3923223AFD002E1396 /* DBLimit.swift in Sources */,
+				5BC92B3B23223B5C002E1396 /* DBOrderby.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5BC92B1223222B4B002E1396 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BC92B1B23222B4B002E1396 /* ViewController.swift in Sources */,
+				5BC92B1923222B4B002E1396 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5BC92B1C23222B4B002E1396 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BC92B1D23222B4B002E1396 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BC92B2123222B4D002E1396 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BC92B2223222B4D002E1396 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BC92B0D23222AAA002E1396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5BC92B0E23222AAA002E1396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5BC92B1023222AAA002E1396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDA17DDE169CB1A20B247F8A /* Pods-tiamo.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8CTQ2DQMDY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = tiamo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbitos.tiamo;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BC92B1123222AAA002E1396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5A00B65E7E79457BDA68BF0 /* Pods-tiamo.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 8CTQ2DQMDY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = tiamo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wbitos.tiamo;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5BC92B2523222B4D002E1396 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB4882A57B7C5B3356A64995 /* Pods-tiamo-demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8CTQ2DQMDY;
+				INFOPLIST_FILE = "tiamo-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wbitos.tiamo-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BC92B2623222B4D002E1396 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6642714387E3DA140BA8B25 /* Pods-tiamo-demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8CTQ2DQMDY;
+				INFOPLIST_FILE = "tiamo-demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wbitos.tiamo-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BC92B0123222AAA002E1396 /* Build configuration list for PBXProject "tiamo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC92B0D23222AAA002E1396 /* Debug */,
+				5BC92B0E23222AAA002E1396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC92B0F23222AAA002E1396 /* Build configuration list for PBXNativeTarget "tiamo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC92B1023222AAA002E1396 /* Debug */,
+				5BC92B1123222AAA002E1396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BC92B2723222B4D002E1396 /* Build configuration list for PBXNativeTarget "tiamo-demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BC92B2523222B4D002E1396 /* Debug */,
+				5BC92B2623222B4D002E1396 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BC92AFE23222AAA002E1396 /* Project object */;
+}
