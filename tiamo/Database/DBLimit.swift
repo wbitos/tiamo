@@ -8,11 +8,11 @@
 
 import Foundation
 
-class DBLimit: NSObject {
-    var offset: Int64 = 0
-    var count: Int64 = 0
+open class DBLimit: NSObject {
+    open var offset: Int64 = 0
+    open var count: Int64 = 0
     
-    init(offset: Int64 = 0, count: Int64 = 100) {
+    public init(offset: Int64 = 0, count: Int64 = 100) {
         self.offset = offset
         self.count = count
         super.init()

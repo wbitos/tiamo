@@ -9,33 +9,32 @@
 import Foundation
 import FMDB
 
-class DBQuery: NSObject {
-    var table: String
-    var connection: FMDatabaseQueue
+open class DBQuery: NSObject {
+    open var table: String
+    open var database: Database
 
-    var condition: DBCondition?
-    var orderby: [DBOrderby] = []
-    var limit: DBLimit?
-    
-    var select: [String]? = nil
+    private var condition: DBCondition?
+    private var orderby: [DBOrderby] = []
+    private var limit: DBLimit?
+    private var select: [String]? = nil
 
-    init(connection: FMDatabaseQueue, table: String) {
-        self.connection = connection
+    public init(database: Database, table: String) {
+        self.database = database
         self.table = table
         super.init()
     }
 
-    func select(_ columbs: [String]? = nil) -> Self {
+    open func select(_ columbs: [String]? = nil) -> Self {
         self.select = columbs
         return self
     }
     
-    func `where`(_ key: String, `operator`: DBValueCondition.Operator = .equal, value: DBQueryable) -> Self {
+    open func `where`(_ key: String, `operator`: DBValueCondition.Operator = .equal, value: DBQueryable) -> Self {
         self.condition = DBValueCondition(key: key, value: value, operator: `operator`)
         return self
     }
     
-    func orWhere(_ key: String, `operator`: DBValueCondition.Operator = .equal, value: DBQueryable) -> Self {
+    open func orWhere(_ key: String, `operator`: DBValueCondition.Operator = .equal, value: DBQueryable) -> Self {
         guard let prev = self.condition else {
             return self
         }
@@ -45,7 +44,7 @@ class DBQuery: NSObject {
         return self
     }
     
-    func andWhere(_ key: String, `operator`: DBValueCondition.Operator = .equal, value: DBQueryable) -> Self {
+    open func andWhere(_ key: String, `operator`: DBValueCondition.Operator = .equal, value: DBQueryable) -> Self {
         guard let prev = self.condition else {
             return self
         }
@@ -55,32 +54,32 @@ class DBQuery: NSObject {
         return self
     }
     
-    func orderby(_ key: String, order: DBOrderby.Order) -> Self {
+    open func orderby(_ key: String, order: DBOrderby.Order) -> Self {
         let orderby = DBOrderby(key, order: order)
         self.orderby.append(orderby)
         return self
     }
     
-    func skip(_ offset: Int64) -> Self {
+    open func skip(_ offset: Int64) -> Self {
         let limit = self.limit ?? DBLimit()
         limit.offset = offset
         self.limit = limit
         return self
     }
     
-    func take(_ count: Int64) -> Self {
+    open func take(_ count: Int64) -> Self {
         let limit = self.limit ?? DBLimit()
         limit.count = count
         self.limit = limit
         return self
     }
     
-    func limit(_ offset: Int64 = 0, count: Int64 = 100) -> Self {
+    open func limit(_ offset: Int64 = 0, count: Int64 = 100) -> Self {
         self.limit = DBLimit(offset: offset, count: count)
         return self
     }
     
-    func sql() -> String {
+    public func sql() -> String {
         var `where` = ""
         if let condition = self.condition {
             `where` = "where \(condition.sql())"
@@ -106,7 +105,7 @@ class DBQuery: NSObject {
         return sql
     }
     
-    func parameters() -> [String: DBQueryable] {
+    public func parameters() -> [String: DBQueryable] {
         var parameters: [String: DBQueryable] = [:]
         if let condition = self.condition {
             parameters.merge(condition.parameters()) { (v1, v2) -> DBQueryable in
@@ -116,15 +115,15 @@ class DBQuery: NSObject {
         return parameters
     }
     
-    func build() -> (String, [String: DBQueryable]) {
+    open func build() -> (String, [String: DBQueryable]) {
         return (self.sql(), self.parameters())
     }
     
-    func getRows() -> [[String: Any]] {
+    open func getRows() -> [[String: Any]] {
         var rows: [[String: Any]] = []
         let (sql, parameters) = self.build()
         NSLog("excute \(sql) with parameters: \(parameters)")
-        self.connection.inDatabase({ (db) in
+        self.database.inDatabase({ (db) in
             if let rs = db.executeQuery(sql, withParameterDictionary: parameters) {
                 while rs.next() {
                     if let map = rs.resultDictionary as? [String: Any] {
@@ -137,11 +136,11 @@ class DBQuery: NSObject {
         return rows
     }
     
-    func firstRow() -> [String: Any]? {
+    open func firstRow() -> [String: Any]? {
         var row: [String: Any]? = nil
         let (sql, parameters) = self.build()
         NSLog("excute \(sql) with parameters: \(parameters)")
-        self.connection.inDatabase({ (db) in
+        self.database.inDatabase({ (db) in
             if let rs = db.executeQuery(sql, withParameterDictionary: parameters) {
                 if rs.next() {
                     if let map = rs.resultDictionary as? [String: Any] {
@@ -155,7 +154,7 @@ class DBQuery: NSObject {
     }
     
     @discardableResult
-    func insert(_ row: [String: Any]) -> Bool {
+    open func insert(_ row: [String: Any]) -> Bool {
         let filtered = row.keys.filter { (name) -> Bool in
             return name != "id"
         }
@@ -168,14 +167,14 @@ class DBQuery: NSObject {
         let sql = "insert into \(self.table) (\(names.joined(separator: ","))) values (\(flags.joined(separator: ",")))"
         NSLog("excute: \(sql)")
         var isSuccess = false
-        self.connection.inTransaction { (db, rollback) in
+        self.database.inTransaction { (db, rollback) in
             isSuccess = db.executeUpdate(sql, withParameterDictionary: row)
         }
         return isSuccess
     }
     
     @discardableResult
-    func update(_ row: [String: Any], primaryKey pk: String = "id") -> Bool {
+    open func update(_ row: [String: Any], primaryKey pk: String = "id") -> Bool {
         let flags = row.keys.filter { (name) -> Bool in
             return name != pk
             }.map { (name) -> String in
@@ -186,14 +185,14 @@ class DBQuery: NSObject {
         NSLog("excute: \(sql) values: \(row)")
         
         var isSuccess = false
-        self.connection.inTransaction { (db, rollback) in
+        self.database.inTransaction { (db, rollback) in
             isSuccess = db.executeUpdate(sql, withParameterDictionary: row)
         }
         return isSuccess
     }
     
     @discardableResult
-    func replace(_ row: [String: Any]) -> Bool {
+    open func replace(_ row: [String: Any]) -> Bool {
         let names = row.keys.map { (name) -> String in
             return "`\(name)`"
         }
@@ -204,25 +203,25 @@ class DBQuery: NSObject {
         
         NSLog("excute: \(sql)")
         var isSuccess = false
-        self.connection.inTransaction { (db, rollback) in
+        self.database.inTransaction { (db, rollback) in
             isSuccess = db.executeUpdate(sql, withParameterDictionary: row)
         }
         return isSuccess
     }
     
     @discardableResult
-    func empty() -> Bool {
+    open func empty() -> Bool {
         let sql = "delete from \(self.table)"
         NSLog("excute: \(sql)")
         var isSuccess = false
-        self.connection.inTransaction { (db, rollback) in
+        self.database.inTransaction { (db, rollback) in
             isSuccess = db.executeUpdate(sql, withParameterDictionary: [:])
         }
         return isSuccess
     }
     
     @discardableResult
-    func delete() -> Bool {
+    open func delete() -> Bool {
         var `where` = ""
         if let condition = self.condition {
             `where` = "where \(condition.sql())"
@@ -230,7 +229,7 @@ class DBQuery: NSObject {
         let sql = "delete from \(self.table) \(`where`)"
         NSLog("excute: \(sql)")
         var isSuccess = false
-        self.connection.inTransaction { (db, rollback) in
+        self.database.inTransaction { (db, rollback) in
             isSuccess = db.executeUpdate(sql, withParameterDictionary: [:])
         }
         return isSuccess

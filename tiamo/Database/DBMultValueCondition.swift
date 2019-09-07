@@ -8,16 +8,16 @@
 
 import Foundation
 
-class DBMultValueCondition: DBCondition {
-    enum Operator: String {
+open class DBMultValueCondition: DBCondition {
+    public enum Operator: String {
         case `in` = "in"
     }
     
-    var key: String
-    var value: MultValue
-    var `operator`: DBMultValueCondition.Operator
+    open var key: String
+    open var value: MultValue
+    open var `operator`: DBMultValueCondition.Operator
     
-    init(key: String, value: MultValue, `operator`: DBMultValueCondition.Operator = .`in`) {
+    public init(key: String, value: MultValue, `operator`: DBMultValueCondition.Operator = .`in`) {
         self.key = key
         self.value = value
         self.`operator` = `operator`

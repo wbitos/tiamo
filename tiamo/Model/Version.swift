@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Version: Model, Record {
-    var createdAt: Date = Date()
-    var updatedAt: Date = Date()
+public class Version: Model, Record {
+    public var createdAt: Date = Date()
+    public var updatedAt: Date = Date()
     
     var version: Int = 0
 }

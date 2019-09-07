@@ -8,8 +8,8 @@
 
 import Foundation
 
-class DBValueCondition: DBCondition {
-    enum Operator: String {
+open class DBValueCondition: DBCondition {
+    public enum Operator: String {
         case equal = "="
         case unEqual = "!="
         
@@ -22,11 +22,11 @@ class DBValueCondition: DBCondition {
         case like = "like"
     }
     
-    var key: String
-    var value: DBQueryable
-    var `operator`: DBValueCondition.Operator
+    open var key: String
+    open var value: DBQueryable
+    open var `operator`: DBValueCondition.Operator
     
-    init(key: String, value: DBQueryable, `operator`: DBValueCondition.Operator = .equal) {
+    public init(key: String, value: DBQueryable, `operator`: DBValueCondition.Operator = .equal) {
         self.key = key
         self.value = value
         self.`operator` = `operator`
@@ -34,12 +34,12 @@ class DBValueCondition: DBCondition {
         super.init()
     }
     
-    override func sql() -> String {
+    override open func sql() -> String {
         let sql = "\(self.key) \(self.`operator`) :\(self.key)"
         return sql
     }
     
-    override func parameters() -> [String: DBQueryable] {
+    override open func parameters() -> [String: DBQueryable] {
         return [self.key: self.value.sqlValue()]
     }
 }

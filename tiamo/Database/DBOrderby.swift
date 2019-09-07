@@ -8,22 +8,22 @@
 
 import Foundation
 
-class DBOrderby: NSObject {
-    enum Order: String {
+open class DBOrderby: NSObject {
+    public enum Order: String {
         case asc = "asc"
         case desc = "desc"
     }
     
-    var by: String
-    var order: DBOrderby.Order = .asc
+    open var by: String
+    open var order: DBOrderby.Order = .asc
     
-    init(_ by: String, order: DBOrderby.Order = .asc) {
+    public init(_ by: String, order: DBOrderby.Order = .asc) {
         self.by = by
         self.order = order
         super.init()
     }
     
-    func sql() -> String {
+    open func sql() -> String {
         let sql = "\(self.by) \(self.order.rawValue)"
         return sql
     }

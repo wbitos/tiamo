@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Migration: Model {
+public class Migration: Model {
     var createdAt: Date = Date()
     var model: String? = nil
     var sql: String? = nil

@@ -32,11 +32,12 @@
 		FABCCEB1232397DB009A78BE /* Array+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB0232397DB009A78BE /* Array+Model.swift */; };
 		FABCCEB323239FC6009A78BE /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB223239FC6009A78BE /* Migration.swift */; };
 		FABCCEB52323A1E3009A78BE /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB42323A1E3009A78BE /* Version.swift */; };
+		FABCCEB62323D309009A78BE /* Tiamo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC92B0723222AAA002E1396 /* Tiamo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06CD89C6E2A09896AFF5D6EE /* Pods_tiamo_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tiamo_demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BC92B0723222AAA002E1396 /* tiamo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = tiamo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC92B0723222AAA002E1396 /* Tiamo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Tiamo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC92B0A23222AAA002E1396 /* tiamo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tiamo.h; sourceTree = "<group>"; };
 		5BC92B0B23222AAA002E1396 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5BC92B1623222B4B002E1396 /* tiamo-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tiamo-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABCCEB62323D309009A78BE /* Tiamo.framework in Frameworks */,
 				19F12C2CA9A5C6CAADE22546 /* Pods_tiamo_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +106,7 @@
 		5BC92B0823222AAA002E1396 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5BC92B0723222AAA002E1396 /* tiamo.framework */,
+				5BC92B0723222AAA002E1396 /* Tiamo.framework */,
 				5BC92B1623222B4B002E1396 /* tiamo-demo.app */,
 			);
 			name = Products;
@@ -199,9 +201,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5BC92B0623222AAA002E1396 /* tiamo */ = {
+		5BC92B0623222AAA002E1396 /* Tiamo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5BC92B0F23222AAA002E1396 /* Build configuration list for PBXNativeTarget "tiamo" */;
+			buildConfigurationList = 5BC92B0F23222AAA002E1396 /* Build configuration list for PBXNativeTarget "Tiamo" */;
 			buildPhases = (
 				7D30A2078569ADA2E2228F59 /* [CP] Check Pods Manifest.lock */,
 				5BC92B0223222AAA002E1396 /* Headers */,
@@ -213,9 +215,9 @@
 			);
 			dependencies = (
 			);
-			name = tiamo;
+			name = Tiamo;
 			productName = tiamo;
-			productReference = 5BC92B0723222AAA002E1396 /* tiamo.framework */;
+			productReference = 5BC92B0723222AAA002E1396 /* Tiamo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5BC92B1523222B4B002E1396 /* tiamo-demo */ = {
@@ -269,7 +271,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5BC92B0623222AAA002E1396 /* tiamo */,
+				5BC92B0623222AAA002E1396 /* Tiamo */,
 				5BC92B1523222B4B002E1396 /* tiamo-demo */,
 			);
 		};
@@ -642,7 +644,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5BC92B0F23222AAA002E1396 /* Build configuration list for PBXNativeTarget "tiamo" */ = {
+		5BC92B0F23222AAA002E1396 /* Build configuration list for PBXNativeTarget "Tiamo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5BC92B1023222AAA002E1396 /* Debug */,

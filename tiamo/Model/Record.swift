@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Record {
+public protocol Record {
     var createdAt: Date { get set }
     var updatedAt: Date { get set }
 }

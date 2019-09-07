@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-extension DBQuery {
+public extension DBQuery {
     func get<T: Mappable>() -> [T] {
         return self.getRows().map({ (json) -> T in
             return T(JSON: json)!

@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol SoftDeletes {
+public protocol SoftDeletes {
     var deletedAt: Date? { get set }
 }

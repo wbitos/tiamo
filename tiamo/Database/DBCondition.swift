@@ -8,16 +8,16 @@
 
 import Foundation
 
-class DBCondition: NSObject {
-    func build() -> (String, [String: DBQueryable]) {
+open class DBCondition: NSObject {
+    open func build() -> (String, [String: DBQueryable]) {
         return (self.sql(), self.parameters())
     }
     
-    func sql() -> String {
+    open func sql() -> String {
         return ""
     }
     
-    func parameters() -> [String: DBQueryable] {
+    open func parameters() -> [String: DBQueryable] {
         return [:]
     }
 }

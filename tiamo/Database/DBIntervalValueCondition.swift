@@ -8,16 +8,16 @@
 
 import Foundation
 
-class DBIntervalValueCondition<T: DBQueryable>: DBCondition {
-    enum Operator: String {
+open class DBIntervalValueCondition<T: DBQueryable>: DBCondition {
+    public enum Operator: String {
         case between = "betwwen"
     }
     
-    var key: String
-    var value: Interval<T>
-    var `operator`: DBIntervalValueCondition.Operator
+    open var key: String
+    open var value: Interval<T>
+    open var `operator`: DBIntervalValueCondition.Operator
     
-    init(key: String, value: Interval<T>, `operator`: DBIntervalValueCondition.Operator = .between) {
+    public init(key: String, value: Interval<T>, `operator`: DBIntervalValueCondition.Operator = .between) {
         self.key = key
         self.value = value
         self.`operator` = `operator`

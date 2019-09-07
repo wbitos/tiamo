@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension Array where Element:Model {
+public extension Array where Element:Model {
     func save() -> Bool {
         return false
     }

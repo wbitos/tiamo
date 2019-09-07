@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol DBQueryable {
+public protocol DBQueryable {
     func sqlValue() -> String
 }
 
-class Interval<T: DBQueryable>: NSObject, DBQueryable {
+public class Interval<T: DBQueryable>: NSObject, DBQueryable {
     var left: T
     var right: T
     
@@ -22,19 +22,19 @@ class Interval<T: DBQueryable>: NSObject, DBQueryable {
         super.init()
     }
     
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         return "\(self.left.sqlValue()) and \(self.right.sqlValue())"
     }
 }
 
-typealias IntegerInterval = Interval<Int>
-typealias Int64Interval = Interval<Int64>
-typealias StringInterval = Interval<String>
+public typealias IntegerInterval = Interval<Int>
+public typealias Int64Interval = Interval<Int64>
+public typealias StringInterval = Interval<String>
 
-typealias MultValue = [DBQueryable]
+public typealias MultValue = [DBQueryable]
 
 extension MultValue: DBQueryable {
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         let sqlValue = self.map { (queryable) -> String in
             return queryable.sqlValue()
         }.joined(separator: ",")
@@ -43,31 +43,31 @@ extension MultValue: DBQueryable {
 }
 
 extension String: DBQueryable {
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         return "\(self)"
     }
 }
 
 extension Int: DBQueryable {
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         return "\(self)"
     }
 }
 
 extension Int64: DBQueryable {
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         return "\(self)"
     }
 }
 
 extension Date: DBQueryable {
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         return "\(self)"
     }
 }
 
 extension Bool: DBQueryable {
-    func sqlValue() -> String {
+    public func sqlValue() -> String {
         return "\(self)"
     }
 }

@@ -10,77 +10,77 @@ import Foundation
 import ObjectMapper
 import FMDB
 
-typealias PropertyName = String
+public typealias PropertyName = String
 
-class Model: NSObject, Mappable {
-    var id: Int64 = 0
+open class Model: NSObject, Mappable {
+    open var id: Int64 = 0
     
-    var table: String = "\(type(of: self))"
+    open var table: String = "\(type(of: self))"
     
-    lazy var db: Database = {
+    open lazy var db: Database = {
         return Database.`default`
     }()
     
-    required init?(map: Map) {
+    required public init?(map: Map) {
         id = (try? map.value("id")) ?? 0
         super.init()
     }
     
-    func mapping(map: Map) {
+    open func mapping(map: Map) {
         id <- map["id"]
     }
     
-    init(db: Database) {
+    public init(db: Database) {
         super.init()
         self.db = db
     }
     
     @discardableResult
-    func insert() -> Bool {
+    open func insert() -> Bool {
         return self.db.table(self.table)?.insert(self.toJSON()) ?? false
     }
     
     @discardableResult
-    func update() -> Bool {
+    open func update() -> Bool {
         return self.db.table(self.table)?.update(self.toJSON()) ?? false
     }
     
     @discardableResult
-    func replace() -> Bool {
+    open func replace() -> Bool {
         return self.db.table(self.table)?.replace(self.toJSON()) ?? false
     }
     
     @discardableResult
-    func save() -> Bool {
+    open func save() -> Bool {
         return (self.id > 0) ? self.replace() : self.insert()
     }
     
-    func empty() -> Bool {
+    open func empty() -> Bool {
         return self.db.table(self.table)?.empty() ?? true
     }
     
     // FIXME: excepts
-    static var excepts: [PropertyName] = {
+    public static var excepts: [PropertyName] = {
         return  ["db", "table", "except"]
     }()
     
-    func columbs() -> [String] {
+    open func columbs() -> [String] {
         return self.properties(true).filter({ (name) -> Bool in
             return type(of: self).excepts.contains(name)
         })
     }
     
-    class func columbs() -> [String] {
+    open class func columbs() -> [String] {
         return self.properties(true).filter({ (name) -> Bool in
             return !self.excepts.contains(name)
         })
     }
     
-    func properties(_ deep: Bool) -> [PropertyName] {
+    open func properties(_ deep: Bool) -> [PropertyName] {
         return Model.properties(forClass: self.classForCoder, deep: deep)
     }
     
-    class func properties(forClass aClass: AnyClass, deep: Bool) -> [PropertyName] {
+    private class func properties(forClass aClass: AnyClass, deep: Bool) -> [PropertyName] {
         var properties:[String] = []
         var cls: AnyClass = aClass
         repeat {
@@ -107,7 +107,7 @@ class Model: NSObject, Mappable {
         return properties
     }
     
-    class func properties(_ deep: Bool) -> [PropertyName] {
+    open class func properties(_ deep: Bool) -> [PropertyName] {
         return Model.properties(forClass: self.classForCoder(), deep: deep)
     }
 }
