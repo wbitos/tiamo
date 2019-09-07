@@ -6,7 +6,7 @@
 //  Copyright © 2019 wbitos. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class DBLimit: NSObject {
     var offset: Int64 = 0

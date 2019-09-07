@@ -6,8 +6,9 @@
 //  Copyright © 2019 wbitos. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class Record: Model {
-
+protocol Record {
+    var createdAt: Date { get set }
+    var updatedAt: Date { get set }
 }

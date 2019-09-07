@@ -6,15 +6,16 @@
 //  Copyright © 2019 wbitos. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import FMDB
 
 class Database: NSObject {
+    static var `default` = Database()
+    
     var connection: FMDatabaseQueue? =  nil
     
-    init(path: String) {
+    func connect(path: String) {
         self.connection = FMDatabaseQueue(path: path)
-        super.init()
     }
     
     func table(_ name: String) -> DBQuery? {
@@ -25,5 +26,11 @@ class Database: NSObject {
         return query
     }
     
+    func inDatabase(_ block: ((FMDatabase) -> Void)) {
+        self.connection?.inDatabase(block)
+    }
     
+    func inTransaction(_ block: ((FMDatabase, UnsafeMutablePointer<ObjCBool>) -> Void)) {
+        self.connection?.inTransaction(block)
+    }
 }
