@@ -31,9 +31,9 @@ class Calendar: Model, Record, SoftDeletes {
         desc = (try? map.value("desc")) ?? ""
         userId = (try? map.value("userId")) ?? 0
         
-        createdAt = (try? map.value("createdAt")) ?? Date()
-        updatedAt = (try? map.value("updatedAt")) ?? Date()
-        deletedAt = try? map.value("deletedAt")
+        createdAt = (try? map.value("createdAt", using: DateTransform())) ?? Date()
+        updatedAt = (try? map.value("updatedAt", using: DateTransform())) ?? Date()
+        deletedAt = try? map.value("deletedAt", using: DateTransform())
     }
     
     override func mapping(map: Map) {
@@ -42,8 +42,8 @@ class Calendar: Model, Record, SoftDeletes {
         desc <- map["desc"]
         userId <- map["userId"]
         
-        createdAt <- map["createdAt"]
-        updatedAt <- map["updatedAt"]
-        deletedAt <- map["deletedAt"]
+        createdAt <- (map["createdAt"], DateTransform(unit: .milliseconds))
+        updatedAt <- (map["updatedAt"], DateTransform(unit: .milliseconds))
+        deletedAt <- (map["deletedAt"], DateTransform(unit: .milliseconds))
     }
 }
