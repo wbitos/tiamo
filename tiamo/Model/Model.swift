@@ -64,13 +64,13 @@ open class Model: NSObject, Mappable {
         return  ["db", "table", "except"]
     }()
     
-    open func columbs() -> [String] {
+    open func columns() -> [String] {
         return self.properties(true).filter({ (name) -> Bool in
             return type(of: self).excepts.contains(name)
         })
     }
     
-    open class func columbs() -> [String] {
+    open class func columns() -> [String] {
         return self.properties(true).filter({ (name) -> Bool in
             return !self.excepts.contains(name)
         })

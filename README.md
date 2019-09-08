@@ -1,2 +1,2 @@
 # tiamo
-Tiamo is another ActiveRecord ORM For iOS
+Tiamo is another very simple uncompleted ActiveRecord ORM For iOS

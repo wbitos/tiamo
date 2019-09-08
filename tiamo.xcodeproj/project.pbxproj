@@ -33,6 +33,8 @@
 		FABCCEB323239FC6009A78BE /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB223239FC6009A78BE /* Migration.swift */; };
 		FABCCEB52323A1E3009A78BE /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB42323A1E3009A78BE /* Version.swift */; };
 		FABCCEB62323D309009A78BE /* Tiamo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC92B0723222AAA002E1396 /* Tiamo.framework */; };
+		FABCCEB82324ABEB009A78BE /* DBTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB72324ABEB009A78BE /* DBTable.swift */; };
+		FABCCEBA2324AD05009A78BE /* DBColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB92324AD05009A78BE /* DBColumn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +71,8 @@
 		FABCCEB0232397DB009A78BE /* Array+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Model.swift"; sourceTree = "<group>"; };
 		FABCCEB223239FC6009A78BE /* Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migration.swift; sourceTree = "<group>"; };
 		FABCCEB42323A1E3009A78BE /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		FABCCEB72324ABEB009A78BE /* DBTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTable.swift; sourceTree = "<group>"; };
+		FABCCEB92324AD05009A78BE /* DBColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBColumn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 				5BC92B3A23223B5C002E1396 /* DBOrderby.swift */,
 				5BC92B2E23223487002E1396 /* DBQuery.swift */,
 				FABCCEAE23239585009A78BE /* DBQuery+Mappable.swift */,
+				FABCCEB72324ABEB009A78BE /* DBTable.swift */,
+				FABCCEB92324AD05009A78BE /* DBColumn.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -372,7 +378,9 @@
 				5BC92B452322748E002E1396 /* Record.swift in Sources */,
 				FABCCEB323239FC6009A78BE /* Migration.swift in Sources */,
 				FABCCEB1232397DB009A78BE /* Array+Model.swift in Sources */,
+				FABCCEB82324ABEB009A78BE /* DBTable.swift in Sources */,
 				5BC92B2F23223487002E1396 /* DBQuery.swift in Sources */,
+				FABCCEBA2324AD05009A78BE /* DBColumn.swift in Sources */,
 				5BC92B3D2322403A002E1396 /* DBValueCondition.swift in Sources */,
 				FABCCEB52323A1E3009A78BE /* Version.swift in Sources */,
 				5BC92B3F2322571B002E1396 /* DBIntervalValueCondition.swift in Sources */,
