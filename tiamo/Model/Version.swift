@@ -6,7 +6,7 @@
 //  Copyright © 2019 wbitos. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class Version: Model, Record {
     public var createdAt: Date = Date()

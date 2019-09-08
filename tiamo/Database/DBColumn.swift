@@ -6,16 +6,35 @@
 //  Copyright © 2019 wbitos. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import ObjectMapper
 
-open class DBColumn: NSObject {
+open class DBColumn: NSObject, Mappable {
+    public enum ValueType: String {
+        case integer = "INTEGER"
+        case text = "TEXT"
+        case real = "REAL"
+        case auto = ""
+    }
+    
     open var name: String
-    open var type: String
+    open var type: ValueType
     open var primary: Bool = false
     open var auto: Bool = false
-    open var nullable: Bool = false
+    open var nullable: Bool = true
     
-    public init(name: String, type: String, primary: Bool = false, auto: Bool = false, nullable: Bool = false) {
+    public required init?(map: Map) {
+        self.name = (try? map.value("name")) ?? "unkown"
+        self.type = ValueType(rawValue: (try? map.value("type")) ?? "") ?? .auto
+        super.init()
+    }
+    
+    public func mapping(map: Map) {
+        name <- map["name"]
+        type <- map["type"]
+    }
+        
+    public init(name: String, type: ValueType, primary: Bool = false, auto: Bool = false, nullable: Bool = true) {
         self.name = name
         self.type = type
         self.primary = primary

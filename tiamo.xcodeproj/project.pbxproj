@@ -32,9 +32,13 @@
 		FABCCEB1232397DB009A78BE /* Array+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB0232397DB009A78BE /* Array+Model.swift */; };
 		FABCCEB323239FC6009A78BE /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB223239FC6009A78BE /* Migration.swift */; };
 		FABCCEB52323A1E3009A78BE /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB42323A1E3009A78BE /* Version.swift */; };
-		FABCCEB62323D309009A78BE /* Tiamo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC92B0723222AAA002E1396 /* Tiamo.framework */; };
 		FABCCEB82324ABEB009A78BE /* DBTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB72324ABEB009A78BE /* DBTable.swift */; };
 		FABCCEBA2324AD05009A78BE /* DBColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB92324AD05009A78BE /* DBColumn.swift */; };
+		FABCCEBD23251FC8009A78BE /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEBC23251FC8009A78BE /* Calendar.swift */; };
+		FABCCEBF232520AE009A78BE /* CalendarTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEBE232520AE009A78BE /* CalendarTag.swift */; };
+		FABCCEC123253488009A78BE /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEC023253488009A78BE /* Property.swift */; };
+		FABCCEC22325365E009A78BE /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEC023253488009A78BE /* Property.swift */; };
+		FABCCEC52325406B009A78BE /* Tiamo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC92B0723222AAA002E1396 /* Tiamo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +77,9 @@
 		FABCCEB42323A1E3009A78BE /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		FABCCEB72324ABEB009A78BE /* DBTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTable.swift; sourceTree = "<group>"; };
 		FABCCEB92324AD05009A78BE /* DBColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBColumn.swift; sourceTree = "<group>"; };
+		FABCCEBC23251FC8009A78BE /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
+		FABCCEBE232520AE009A78BE /* CalendarTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTag.swift; sourceTree = "<group>"; };
+		FABCCEC023253488009A78BE /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FABCCEB62323D309009A78BE /* Tiamo.framework in Frameworks */,
+				FABCCEC52325406B009A78BE /* Tiamo.framework in Frameworks */,
 				19F12C2CA9A5C6CAADE22546 /* Pods_tiamo_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +137,7 @@
 		5BC92B1723222B4B002E1396 /* tiamo-demo */ = {
 			isa = PBXGroup;
 			children = (
+				FABCCEBB23251FAF009A78BE /* Model */,
 				5BC92B1823222B4B002E1396 /* AppDelegate.swift */,
 				5BC92B1A23222B4B002E1396 /* ViewController.swift */,
 				5BC92B1C23222B4B002E1396 /* Main.storyboard */,
@@ -143,6 +151,7 @@
 		5BC92B28232232A1002E1396 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FABCCEC023253488009A78BE /* Property.swift */,
 				5BC92B422322738E002E1396 /* Model.swift */,
 				5BC92B442322748E002E1396 /* Record.swift */,
 				FABCCEAA23239141009A78BE /* SoftDeletes.swift */,
@@ -191,6 +200,15 @@
 				06CD89C6E2A09896AFF5D6EE /* Pods_tiamo_demo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FABCCEBB23251FAF009A78BE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FABCCEBE232520AE009A78BE /* CalendarTag.swift */,
+				FABCCEBC23251FC8009A78BE /* Calendar.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -372,6 +390,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABCCEC22325365E009A78BE /* Property.swift in Sources */,
 				FABCCEAB23239141009A78BE /* SoftDeletes.swift in Sources */,
 				5BC92B3723223A6F002E1396 /* DBCombinationCondition.swift in Sources */,
 				5BC92B3523223781002E1396 /* DBQueryable.swift in Sources */,
@@ -399,6 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC92B1B23222B4B002E1396 /* ViewController.swift in Sources */,
+				FABCCEC123253488009A78BE /* Property.swift in Sources */,
+				FABCCEBD23251FC8009A78BE /* Calendar.swift in Sources */,
+				FABCCEBF232520AE009A78BE /* CalendarTag.swift in Sources */,
 				5BC92B1923222B4B002E1396 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

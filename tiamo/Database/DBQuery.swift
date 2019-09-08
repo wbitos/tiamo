@@ -155,20 +155,24 @@ open class DBQuery: NSObject {
     
     @discardableResult
     open func insert(_ row: [String: Any]) -> Bool {
-        let filtered = row.keys.filter { (name) -> Bool in
-            return name != "id"
+        let filtered = row.filter { (arg0) -> Bool in
+            let (key, _) = arg0
+            return key != "id"
         }
-        let names = filtered.map { (name) -> String in
+        
+        let names = filtered.map { (arg0) -> String in
+            let (name, _) = arg0
             return "`\(name)`"
         }
-        let flags = filtered.map { (name) -> String in
+        let flags = filtered.map { (arg0) -> String in
+            let (name, _) = arg0
             return ":\(name)"
         }
-        let sql = "insert into \(self.table) (\(names.joined(separator: ","))) values (\(flags.joined(separator: ",")))"
+        let sql = "insert into `\(self.table)` (\(names.joined(separator: ","))) values (\(flags.joined(separator: ",")))"
         NSLog("excute: \(sql)")
         var isSuccess = false
         self.database.inTransaction { (db, rollback) in
-            isSuccess = db.executeUpdate(sql, withParameterDictionary: row)
+            isSuccess = db.executeUpdate(sql, withParameterDictionary: filtered)
         }
         return isSuccess
     }
@@ -180,7 +184,7 @@ open class DBQuery: NSObject {
             }.map { (name) -> String in
                 return "`\(name)` = :\(name)"
         }
-        let sql = "update \(self.table) set \(flags.joined(separator: ",")) where \(pk)=:\(pk)"
+        let sql = "update `\(self.table)` set \(flags.joined(separator: ",")) where \(pk)=:\(pk)"
         
         NSLog("excute: \(sql) values: \(row)")
         
@@ -199,7 +203,7 @@ open class DBQuery: NSObject {
         let flags = row.keys.map { (name) -> String in
             return ":\(name)"
         }
-        let sql = "insert or replace into \(self.table) (\(names.joined(separator: ","))) values (\(flags.joined(separator: ",")))"
+        let sql = "insert or replace into `\(self.table)` (\(names.joined(separator: ","))) values (\(flags.joined(separator: ",")))"
         
         NSLog("excute: \(sql)")
         var isSuccess = false
@@ -211,7 +215,7 @@ open class DBQuery: NSObject {
     
     @discardableResult
     open func empty() -> Bool {
-        let sql = "delete from \(self.table)"
+        let sql = "delete from `\(self.table)`"
         NSLog("excute: \(sql)")
         var isSuccess = false
         self.database.inTransaction { (db, rollback) in
@@ -226,7 +230,7 @@ open class DBQuery: NSObject {
         if let condition = self.condition {
             `where` = "where \(condition.sql())"
         }
-        let sql = "delete from \(self.table) \(`where`)"
+        let sql = "delete from `\(self.table)` \(`where`)"
         NSLog("excute: \(sql)")
         var isSuccess = false
         self.database.inTransaction { (db, rollback) in

@@ -6,7 +6,7 @@
 //  Copyright © 2019 wbitos. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public extension Array where Element:Model {
     func save() -> Bool {
