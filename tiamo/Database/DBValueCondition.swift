@@ -35,7 +35,7 @@ open class DBValueCondition: DBCondition {
     }
     
     override open func sql() -> String {
-        let sql = "\(self.key) \(self.`operator`) :\(self.key)"
+        let sql = "\(self.key) \(self.`operator`.rawValue) :\(self.key)"
         return sql
     }
     

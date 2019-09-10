@@ -11,6 +11,7 @@ import FMDB
 
 open class Database: NSObject {
     public static var `default` = Database()
+    public var path: String? = nil
     
     public override init() {
         super.init()
@@ -19,6 +20,7 @@ open class Database: NSObject {
     private var connection: FMDatabaseQueue? =  nil
     
     open func connect(path: String) {
+        self.path = path
         self.connection = FMDatabaseQueue(path: path)
     }
     
@@ -35,5 +37,7 @@ open class Database: NSObject {
         self.connection?.inTransaction(block)
     }
     
-    
+    open func table(model: Model.Type) -> DBTable {
+        return DBTable(model: model, database: self)
+    }
 }

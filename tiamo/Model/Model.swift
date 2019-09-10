@@ -164,4 +164,8 @@ open class Model: NSObject, Mappable {
     open class func properties(_ deep: Bool) -> [Property] {
         return Model.properties(forClass: self.classForCoder(), deep: deep)
     }
+    
+    open class func find(id: Int64) -> Self? {
+        return DBQuery(database: Database.`default`, table: self.table().name).find(id)
+    }
 }

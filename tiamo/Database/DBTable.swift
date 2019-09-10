@@ -10,7 +10,13 @@ import Foundation
 
 open class DBTable: NSObject {
     open var name: String
-
+    
+    override open var hash: Int {
+        get {
+            return ((self.database?.path ?? "") + ":\(self.name)").hashValue
+        }
+    }
+    
     private var database: Database? = nil
     private var columns: [DBColumn] = []
     

@@ -25,12 +25,18 @@ class ViewController: UIViewController {
             
             //DBTable(model: Calendar.self).create(database: db)
             
-            let calendar = Calendar(db: db)
-            calendar.name = "我的日历"
-            calendar.desc = "我的个人日历，私有日历"
-            calendar.save()
+//            let calendar = Calendar(db: db)
+//            calendar.name = "我的日历"
+//            calendar.desc = "我的个人日历，私有日历"
+//            calendar.save()
+//            
+//            NSLog("\(calendar.columns().toJSON())")
+
             
-            NSLog("\(calendar.columns().toJSON())")
+            if let calendar = Calendar.find(id: 1) {
+                NSLog("name: \(calendar.name)")
+            }
+            
         }
     }
 

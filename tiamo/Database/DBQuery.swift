@@ -8,6 +8,7 @@
 
 import Foundation
 import FMDB
+import ObjectMapper
 
 open class DBQuery: NSObject {
     open var table: String
@@ -153,6 +154,30 @@ open class DBQuery: NSObject {
         return row
     }
     
+    open func findRow(_ id: Int64) -> [String: Any]? {
+        return self.where("id", value: id).firstRow()
+    }
+    
+    func get<T: Mappable>() -> [T] {
+        return self.getRows().map({ (json) -> T in
+            return T(JSON: json)!
+        })
+    }
+    
+    func first<T: Mappable>() -> T? {
+        guard let json = self.firstRow() else {
+            return nil
+        }
+        return T(JSON: json)
+    }
+    
+    open func find<T: Mappable>(_ id: Int64) -> T? {
+        guard let json = self.findRow(id) else {
+            return nil
+        }
+        return T(JSON: json)
+    }
+    
     @discardableResult
     open func insert(_ row: [String: Any]) -> Bool {
         let filtered = row.filter { (arg0) -> Bool in
@@ -237,5 +262,24 @@ open class DBQuery: NSObject {
             isSuccess = db.executeUpdate(sql, withParameterDictionary: [:])
         }
         return isSuccess
+    }
+    
+    public typealias DBQueryBuildBlock = ((DBQuery) -> Void)
+    
+    private var withs: [DBTable: DBQueryBuildBlock] = [:]
+    
+    open func with(table: DBTable, query: DBQueryBuildBlock? = nil) -> Self {
+        let empty: DBQueryBuildBlock = {(query) -> Void in
+            
+        }
+        self.withs[table] = query ?? empty
+        return self
+    }
+    
+    open func with(subQueries: [DBTable: DBQueryBuildBlock]) -> Self {
+        self.withs.merge(subQueries) { (b1, b2) -> DBQuery.DBQueryBuildBlock in
+            return b2
+        }
+        return self
     }
 }

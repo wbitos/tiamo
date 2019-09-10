@@ -28,7 +28,6 @@
 		5BC92B432322738E002E1396 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B422322738E002E1396 /* Model.swift */; };
 		5BC92B452322748E002E1396 /* Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92B442322748E002E1396 /* Record.swift */; };
 		FABCCEAB23239141009A78BE /* SoftDeletes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEAA23239141009A78BE /* SoftDeletes.swift */; };
-		FABCCEAF23239585009A78BE /* DBQuery+Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEAE23239585009A78BE /* DBQuery+Mappable.swift */; };
 		FABCCEB1232397DB009A78BE /* Array+Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB0232397DB009A78BE /* Array+Model.swift */; };
 		FABCCEB323239FC6009A78BE /* Migration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB223239FC6009A78BE /* Migration.swift */; };
 		FABCCEB52323A1E3009A78BE /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABCCEB42323A1E3009A78BE /* Version.swift */; };
@@ -71,7 +70,6 @@
 		BDA17DDE169CB1A20B247F8A /* Pods-tiamo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiamo.debug.xcconfig"; path = "Target Support Files/Pods-tiamo/Pods-tiamo.debug.xcconfig"; sourceTree = "<group>"; };
 		C6642714387E3DA140BA8B25 /* Pods-tiamo-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tiamo-demo.release.xcconfig"; path = "Target Support Files/Pods-tiamo-demo/Pods-tiamo-demo.release.xcconfig"; sourceTree = "<group>"; };
 		FABCCEAA23239141009A78BE /* SoftDeletes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftDeletes.swift; sourceTree = "<group>"; };
-		FABCCEAE23239585009A78BE /* DBQuery+Mappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBQuery+Mappable.swift"; sourceTree = "<group>"; };
 		FABCCEB0232397DB009A78BE /* Array+Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Model.swift"; sourceTree = "<group>"; };
 		FABCCEB223239FC6009A78BE /* Migration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Migration.swift; sourceTree = "<group>"; };
 		FABCCEB42323A1E3009A78BE /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 				5BC92B3823223AFD002E1396 /* DBLimit.swift */,
 				5BC92B3A23223B5C002E1396 /* DBOrderby.swift */,
 				5BC92B2E23223487002E1396 /* DBQuery.swift */,
-				FABCCEAE23239585009A78BE /* DBQuery+Mappable.swift */,
 				FABCCEB72324ABEB009A78BE /* DBTable.swift */,
 				FABCCEB92324AD05009A78BE /* DBColumn.swift */,
 			);
@@ -408,7 +405,6 @@
 				5BC92B41232257BE002E1396 /* DBMultValueCondition.swift in Sources */,
 				5BC92B432322738E002E1396 /* Model.swift in Sources */,
 				5BC92B3923223AFD002E1396 /* DBLimit.swift in Sources */,
-				FABCCEAF23239585009A78BE /* DBQuery+Mappable.swift in Sources */,
 				5BC92B3B23223B5C002E1396 /* DBOrderby.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

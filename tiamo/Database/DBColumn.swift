@@ -42,4 +42,11 @@ open class DBColumn: NSObject, Mappable {
         self.nullable = nullable
         super.init()
     }
+    
+    private var table: DBTable? = nil
+
+    open var hasOne: (DBTable, DBColumn)? = nil
+    open var hasMany: (DBTable, DBColumn)? = nil
+    open var belongOne: (DBTable, DBColumn)? = nil
+    open var belongMany: (DBTable, DBColumn)? = nil
 }
