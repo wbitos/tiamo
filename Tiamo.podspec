@@ -96,7 +96,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.source_files  = "tiamo", "tiamo/**/*.{h,m,swift}"
-  #spec.exclude_files = "Classes/Exclude"
+  spec.exclude_files = "tiamo/tiamo.h"
 
   # spec.public_header_files = "Classes/**/*.h"
 
