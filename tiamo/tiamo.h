@@ -6,7 +6,7 @@
 //  Copyright © 2019 when. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for tiamo.
 FOUNDATION_EXPORT double tiamoVersionNumber;
